@@ -1,6 +1,6 @@
 var Model = require('../models')
 
-const staff = {
+const staffs = {
     getAllStaffs: async (req, res) => {
 		let staffs = []
 		try {
@@ -20,9 +20,9 @@ const staff = {
 				where: {
 					id: req.params.id
 				},
-				include: [{
-					model: Model.Comments
-				}]
+				//include: [{
+				//	model: Model.Comments
+				//}]
 			})
 		} catch(e) {
 				console.log(e)
@@ -80,4 +80,4 @@ const staff = {
 	}
 	
 }
-module.exports = staff
+module.exports = staffs
