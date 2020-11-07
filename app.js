@@ -8,6 +8,7 @@ var env = require('dotenv').config()
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var staffRouter = require('./routes/staff');
+var serviceRouter = require('./routes/service');
 
 var Models = require("./models")
 
@@ -28,5 +29,6 @@ app.use(bodyParser.json())
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/staff', staffRouter);
+app.use('/service', serviceRouter);
 
 module.exports = app;
