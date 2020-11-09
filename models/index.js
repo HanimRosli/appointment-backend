@@ -12,7 +12,9 @@ const sequelize = new Sequelize(
 	}
 );
 
-const db = {}; 
+
+const db = {};
+
 
 Fs.readdirSync(__dirname)
 	.filter(file => file.indexOf(".") !== 0 && file !== "index.js")
@@ -23,6 +25,7 @@ Fs.readdirSync(__dirname)
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+
 
 Object.keys(db).forEach(key => {
 	if (db[key] && db[key].associate) {
