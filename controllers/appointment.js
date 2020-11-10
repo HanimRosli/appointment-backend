@@ -1,5 +1,4 @@
 var Model = require('../models')
-var appt = require('../models/appt')
 
 const appointment = {
 

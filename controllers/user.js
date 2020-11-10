@@ -4,7 +4,11 @@ const users = {
     getAllUsers: async (req, res) => {
 		let users = []
 		try {
-            users = await Model.Users.findAll()
+            users = await Model.Users.findAll({
+				include: [{
+                    model: Model.Bookings
+                }]
+			})
 					
 		} catch(e) {
 				console.log(e)
@@ -20,9 +24,9 @@ const users = {
 				where: {
 					id: req.params.id
 				},
-				//include: [{
-				//	model: Model.Comments
-				//}]
+				include: [{
+                    model: Model.Bookings
+                }]
 			})
 		} catch(e) {
 				console.log(e)
@@ -79,6 +83,23 @@ const users = {
 		res.status(204).json({
 			status: 'Success'
 		})
+	},
+
+	//add booking
+    addBooking: async (req, res) => {
+
+		let booking = {}
+
+		try {
+			booking = await Model.Bookings.create({
+				booking: req.body.booking,
+				UserId: req.params.id
+			})
+		} catch(e) {
+			console.log(e)
+		}
+
+		res.json(booking)
 	}
 	
 }
