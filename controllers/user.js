@@ -92,7 +92,9 @@ const users = {
 
 		try {
 			booking = await Model.Bookings.create({
-				booking: req.body.booking,
+				date: req.body.date,
+				time: req.body.time,
+				service: req.body.service,
 				UserId: req.params.id
 			})
 		} catch(e) {
