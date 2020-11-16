@@ -10,7 +10,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var staffRouter = require('./routes/staff');
 var serviceRouter = require('./routes/service');
-var apptRouter = require('./routes/appointment');
+var bookRouter = require('./routes/booking');
 
 var Models = require("./models")
 
@@ -36,7 +36,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/staff', staffRouter);
 app.use('/service', serviceRouter);
-app.use('/appointment', apptRouter);
+app.use('/bookings', bookRouter); 
 
 
 module.exports = app;

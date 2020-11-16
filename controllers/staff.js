@@ -38,9 +38,11 @@ const staffs = {
 			
 			staff = await Model.Staffs.create({
 				username: req.body.username,
-                fullname: req.body.fullname,
+				fullname: req.body.fullname,
+				contact: req.body.contact,
                 email: req.body.email,
-                address: req.body.address
+				address: req.body.address,
+				position: req.body.position
 			})
 
 		} catch(e) {

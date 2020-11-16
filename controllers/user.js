@@ -3,6 +3,7 @@ var Model = require('../models')
 const users = {
     getAllUsers: async (req, res) => {
 		let users = []
+		console.log(req)
 		try {
             users = await Model.Users.findAll({
 				include: [{
@@ -19,6 +20,7 @@ const users = {
 
 	getUser: async (req, res) => {
 		let user = []
+		console.log(req)
 		try {
 			user = await Model.Users.findOne({
 				where: {
@@ -46,7 +48,7 @@ const users = {
                 contact: req.body.contact,
                 email: req.body.email,
                 address: req.body.address,
-                skin_concern: req.body.skin_concern
+                skinConcern: req.body.skinConcern
 			})
 
 		} catch(e) {

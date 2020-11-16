@@ -37,13 +37,8 @@ const services = {
 		try {
 			
 			user = await Model.Services.create({
-                servicename: req.body.servicename,
-                category: req.body.category,
-                description: req.body.description,
-                assigned: req.body.assigned,
-                procedure: req.body.procedure,
-                comment: req.body.comment,
-                
+				category: req.body.category,
+                serviceName: req.body.serviceName
 			})
 
 		} catch(e) {
