@@ -4,7 +4,10 @@ const staffs = {
     getAllStaffs: async (req, res) => {
 		let staffs = []
 		try {
-            staffs = await Model.Staffs.findAll()
+			staffs = await Model.Staffs.findAll()
+				//include: [{
+				//model: Model.Services
+				//}]
 					
 		} catch(e) {
 				console.log(e)
@@ -21,7 +24,7 @@ const staffs = {
 					id: req.params.id
 				},
 				//include: [{
-				//	model: Model.Comments
+				//model: Model.Services
 				//}]
 			})
 		} catch(e) {
@@ -40,7 +43,8 @@ const staffs = {
 				username: req.body.username,
                 fullname: req.body.fullname,
                 email: req.body.email,
-                address: req.body.address
+				address: req.body.address,
+				
 			})
 
 		} catch(e) {
@@ -78,6 +82,7 @@ const staffs = {
 			status: 'Success'
 		})
 	}
+	
 	
 }
 module.exports = staffs

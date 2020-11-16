@@ -79,6 +79,29 @@ const users = {
 		res.status(204).json({
 			status: 'Success'
 		})
+<<<<<<< Updated upstream
+=======
+	},
+
+	//add booking
+    addBooking: async (req, res) => {
+
+		let booking = {}
+
+		try {
+			booking = await Model.Bookings.create({
+				date: req.body.date,
+				time: req.body.time,
+				service: req.body.service,
+				UserId: req.params.id,
+				//ServiceId: req.params.id
+			})
+		} catch(e) {
+			console.log(e)
+		}
+
+		res.json(booking)
+>>>>>>> Stashed changes
 	}
 	
 }

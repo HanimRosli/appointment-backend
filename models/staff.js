@@ -4,7 +4,10 @@ module.exports = (sequelize, DataTypes) => {
         fullname: DataTypes.STRING,
         email: DataTypes.STRING,
         address: DataTypes.STRING,
-	});
+        });
+        
+       // Staffs.associate = function(models) {
+	//	Staffs.hasMany(models.Services)}
 
 	return Staffs;
 };
