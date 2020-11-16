@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) => {
         fullname: DataTypes.STRING,
         email: DataTypes.STRING,
         address: DataTypes.STRING,
+        position: DataTypes.STRING
         });
         
        // Staffs.associate = function(models) {

@@ -39,7 +39,7 @@ const appointment = {
 
         try{
             appt = await Model.Appointment.create({
-                title: req.body.title,
+                date: req.body.title,
                 description: req.body.description
             })
         }catch(e){

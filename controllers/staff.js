@@ -44,6 +44,7 @@ const staffs = {
                 fullname: req.body.fullname,
                 email: req.body.email,
 				address: req.body.address,
+				position: req.body.position
 				
 			})
 

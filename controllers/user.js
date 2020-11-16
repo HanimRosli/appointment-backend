@@ -38,9 +38,9 @@ const users = {
 			
 			user = await Model.Users.create({
 				username: req.body.username,
-                fullname: req.body.fullname,
+				fullname: req.body.fullname,
+				email: req.body.email,
                 contact: req.body.contact,
-                email: req.body.email,
                 address: req.body.address,
                 skin_concern: req.body.skin_concern
 			})
@@ -79,8 +79,6 @@ const users = {
 		res.status(204).json({
 			status: 'Success'
 		})
-<<<<<<< Updated upstream
-=======
 	},
 
 	//add booking
@@ -101,7 +99,6 @@ const users = {
 		}
 
 		res.json(booking)
->>>>>>> Stashed changes
 	}
 	
 }

@@ -36,11 +36,9 @@ const services = {
 
 		try {
 			
-			user = await Model.Services.create({
+			service = await Model.Services.create({
                 servicename: req.body.servicename,
-                description: req.body.description,
-                procedure: req.body.procedure,
-                
+                category: req.body.category
                 
 			})
 
@@ -55,7 +53,7 @@ const services = {
 		let service = {}
 
 		try {
-			user = await Model.Services.update(
+			service = await Model.Services.update(
 				req.body, {
 				where: {
 					id: req.params.id
